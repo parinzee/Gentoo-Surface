@@ -9,6 +9,7 @@ Some device's wifi won't work with **Gentoo's Live CD**:
 Known Devices:
 - Surface Laptops 1 and 2
 
+## Install Process
 To mitigate this, I installed Gentoo using an *Ubuntu Live CD* (Gentoo can be installed using any livecd) also followed this [Youtube Video](https://youtu.be/6yxJoMa05ZM).
 
 
@@ -26,6 +27,7 @@ To mitigate this, I installed Gentoo using an *Ubuntu Live CD* (Gentoo can be in
 
 `emerge -aqn dev-vcs/git`
 
+## Patch Kernel
 - Then cd into the kernel source dir and clone the patches as well as this **Repo's config**.
 
 `cd /usr/src & git clone https://github.com/linux-surface/linux-surface & git clone https://github.com/Parinz/Gentoo-Surface`
@@ -59,6 +61,7 @@ To mitigate this, I installed Gentoo using an *Ubuntu Live CD* (Gentoo can be in
 
 `genkernel --install --microcode-initramfs --kernel-config=/usr/src/linux/.config initramfs`
 
+## Fixing Network
 - Add *Network Manager [USE FLAG](https://wiki.gentoo.org/wiki/Handbook:AMD64/Working/USE#Using_USE_flags)* to your *make.conf*:
 
 `nano /etc/portage/make.conf` To exit do Ctrl+o and Ctrl+x
